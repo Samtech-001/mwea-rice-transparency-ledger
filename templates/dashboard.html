@@ -7,50 +7,59 @@
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: #f9fafb; margin: 0; padding: 0; color: #111827; }
         nav { background-color: #047857; color: white; padding: 15px 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        .grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-bottom: 30px; }
-        @media (min-width: 768px) { .grid { grid-template-columns: 1fr 2fr; } }
-        .card { background: white; padding: 20px; rounded-radius: 8px; border: 1px solid #e5e7eb; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+        .grid-top { display: grid; grid-template-columns: 1fr; gap: 20px; margin-bottom: 25px; }
+        @media (min-width: 1024px) { .grid-top { grid-template-columns: 1fr 1fr; } }
+        .grid-inputs { display: grid; grid-template-columns: 1fr; gap: 20px; margin-bottom: 30px; }
+        @media (min-width: 768px) { .grid-inputs { grid-template-columns: 1fr 1fr; } }
+        .card { background: white; padding: 20px; border: 1px solid #e5e7eb; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
         h1 { margin: 0; font-size: 22px; font-weight: bold; }
-        h2 { margin-top: 0; font-size: 14px; text-transform: uppercase; tracking-spacing: 1px; color: #065f46; }
-        .form-group { margin-bottom: 15px; }
-        label { display: block; font-weight: 600; margin-bottom: 5px; font-size: 13px; color: #374151; }
-        input[type="text"] { width: 100%; padding: 8px 12px; border: 1px solid #d1d5db; border-radius: 4px; box-sizing: border-box; background-color: #f3f4f6; }
-        input[type="text"]:not([readonly]) { background-color: white; }
+        h2 { margin-top: 0; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: #065f46; border-bottom: 2px solid #ecfdf5; padding-bottom: 6px; margin-bottom: 15px; }
+        .form-group { margin-bottom: 12px; }
+        label { display: block; font-weight: 600; margin-bottom: 4px; font-size: 12px; color: #374151; }
+        input[type="text"], input[type="number"], input[type="date"], select { width: 100%; padding: 8px 12px; border: 1px solid #d1d5db; border-radius: 4px; box-sizing: border-box; font-size: 13px; }
         .alert { background-color: #fffbeb; border: 1px solid #fef3c7; color: #92400e; padding: 12px; border-radius: 6px; font-size: 12px; line-height: 1.5; margin-top: 15px; }
-        .btn { width: 100%; background-color: #059669; color: white; border: none; padding: 10px; border-radius: 4px; font-weight: bold; cursor: pointer; text-transform: uppercase; font-size: 12px; letter-spacing: 0.5px; }
+        .btn { width: 100%; background-color: #059669; color: white; border: none; padding: 9px; border-radius: 4px; font-weight: bold; cursor: pointer; text-transform: uppercase; font-size: 12px; }
         .btn:hover { background-color: #047857; }
-        .table-card { background: white; border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; }
+        .btn-amber { background-color: #d97706; } .btn-amber:hover { background-color: #b45309; }
+        .btn-gray { background-color: #1f2937; } .btn-gray:hover { background-color: #111827; }
+        .table-card { background: white; border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; margin-top: 25px; }
         .table-header { background-color: #1f2937; color: white; padding: 15px 20px; font-weight: bold; font-size: 14px; }
         table { width: 100%; border-collapse: collapse; text-align: left; font-size: 13px; }
         th { background-color: #f3f4f6; padding: 12px 15px; color: #4b5563; text-transform: uppercase; font-size: 11px; border-bottom: 2px solid #e5e7eb; }
         td { padding: 15px; border-bottom: 1px solid #e5e7eb; }
         .badge { display: inline-block; padding: 3px 8px; border-radius: 12px; font-size: 11px; font-weight: bold; background-color: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
         .farmer-name { font-weight: bold; color: #111827; font-size: 14px; }
-        .farmer-phone { color: #6b7280; font-size: 11px; font-family: monospace; }
-        .net-pay { font-weight: bold; color: #047857; font-size: 14px; background-color: #ecfdf5; padding: 4px 8px; border-radius: 4px; }
+        .farmer-phone { color: #6b7280; font-size: 11px; font-family: monospace; margin-top: 2px; }
+        .net-pay { font-weight: bold; color: #047857; font-size: 14px; background-color: #ecfdf5; padding: 4px 8px; border-radius: 4px; display: inline-block; }
     </style>
 </head>
 <body>
     <nav>
-        <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+        <div style="max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
             <h1>🌾 Mwea Rice Growers Transparency Portal</h1>
-            <span style="background-color: #04523b; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 500;">System Active</span>
+            <span style="background-color: #04523b; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 500;">Commercial Engine v1.2</span>
         </div>
     </nav>
 
     <main class="container">
-        <div class="grid">
+        <!-- Interactive Timeline Controls & Profile Registration -->
+        <div class="grid-top">
             <div class="card">
-                <h2>⏱️ Timeline Control</h2>
-                <div class="form-group">
-                    <label>Government Fund Release Date:</label>
-                    <input type="text" readonly value="{{ dates.gov_release_date if dates else '2026-05-15' }}">
-                </div>
-                <div class="form-group">
-                    <label>Actual SACCO Disbursal Date:</label>
-                    <input type="text" readonly value="{{ dates.sacco_disburse_date if dates else '2026-09-20' }}">
-                </div>
+                <h2>⏱️ Interactive Timeline Control</h2>
+                <form action="/update-dates" method="POST">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px;">
+                        <div>
+                            <label>Gov Fund Release Date:</label>
+                            <input type="date" name="gov_release_date" value="{{ dates.gov_release_date if dates else '2026-05-15' }}" required>
+                        </div>
+                        <div>
+                            <label>Actual SACCO Payout Date:</label>
+                            <input type="date" name="sacco_disburse_date" value="{{ dates.sacco_disburse_date if dates else '2026-09-20' }}" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-amber">Recalculate Global Timeline</button>
+                </form>
                 <div class="alert">
                     🛡️ <strong>System Protection Active:</strong> Input loan interest tracking stops dynamically on the Government Release Date. Delay periods are penalized directly to the cooperative ledger.
                 </div>
@@ -58,7 +67,7 @@
 
             <div class="card">
                 <h2>👤 Register Grower Profile</h2>
-                <form action="/add-farmer" method="POST" style="display: grid; grid-template-columns: 1fr; gap: 12px;">
+                <form action="/add-farmer" method="POST" style="display: grid; grid-template-columns: 1fr; gap: 10px;">
                     <div>
                         <label>Farmer Full Name:</label>
                         <input type="text" name="name" placeholder="e.g. John Mutugi" required>
@@ -70,60 +79,78 @@
                         </div>
                         <div>
                             <label>Mwea Block / Section:</label>
-                            <input type="text" name="location" placeholder="e.g. Section 2, Unit 4" required>
+                            <input type="text" name="location" placeholder="e.g. Section 2, Mwea" required>
                         </div>
                     </div>
-                    <div style="margin-top: 5px;">
-                        <button type="submit" class="btn">Commit Grower Entry</button>
-                    </div>
+                    <button type="submit" class="btn">Commit Grower Entry</button>
                 </form>
             </div>
         </div>
 
-        <div class="table-card">
-            <div class="table-header">📊 Active Transparency Audit Ledger Engine</div>
-            <div style="overflow-x: auto;">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Grower Details</th>
-                            <th>Bags Logged</th>
-                            <th>Gross Earnings</th>
-                            <th>Capped Interest</th>
-                            <th>Total Deductions</th>
-                            <th>Net Final Payout</th>
-                            <th>SACCO Delay Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for farmer in farmers %}
-                        <tr>
-                            <td style="font-family: monospace; color: #9ca3af; font-weight: bold;">#{{ farmer.id }}</td>
-                            <td>
-                                <div class="farmer-name">{{ farmer.name }}</div>
-                                <div class="farmer-phone">{{ farmer.phone }}</div>
-                            </td>
-                            <td style="font-weight: 600;">{{ farmer.bags }} Bags</td>
-                            <td style="font-family: monospace; font-weight: 600;">KES {{ "{:,.2f}".format(farmer.gross) }}</td>
-                            <td style="font-family: monospace; color: #b45309; font-weight: 600;">KES {{ "{:,.2f}".format(farmer.interest) }}</td>
-                            <td style="font-family: monospace; color: #dc2626;">KES {{ "{:,.2f}".format(farmer.deductions) }}</td>
-                            <td><span class="net-pay">KES {{ "{:,.2f}".format(farmer.net) }}</span></td>
-                            <td>
-                                <span class="badge">
-                                    {{ farmer.delay }} Days Overdue by SACCO
-                                </span>
-                            </td>
-                        </tr>
-                        {% else %}
-                        <tr>
-                            <td colspan="8" style="padding: 30px; text-align: center; color: #9ca3af; font-style: italic;">No grower transaction pipelines compiled in ledger database workspace yet. Register a farmer profile above to view tracking benchmarks!</td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
+        <!-- Rice Delivery & Input Services Expense Logging Points -->
+        <div class="grid-inputs">
+            <div class="card">
+                <h2>🌾 Log Rice Harvest Delivery (Price Lock Form)</h2>
+                <form action="/add-delivery" method="POST" style="display: grid; grid-template-columns: 1fr; gap: 10px;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                        <div>
+                            <label>Select Grower ID:</label>
+                            <input type="number" name="farmer_id" placeholder="ID (e.g. 1)" required>
+                        </div>
+                        <div>
+                            <label>Delivery Date:</label>
+                            <input type="date" name="delivery_date" required>
+                        </div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                        <div>
+                            <label>Bags Delivered:</label>
+                            <input type="number" name="bags_delivered" placeholder="e.g. 45" required>
+                        </div>
+                        <div>
+                            <label>Price Per Bag (KES):</label>
+                            <input type="number" name="price_per_bag" placeholder="e.g. 7500" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-gray">Lock Delivery Transaction</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h2>🚜 Log SACCO Input Advance / Service Expense</h2>
+                <form action="/add-loan" method="POST" style="display: grid; grid-template-columns: 1fr; gap: 10px;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                        <div>
+                            <label>Grower ID:</label>
+                            <input type="number" name="farmer_id" placeholder="ID (e.g. 1)" required>
+                        </div>
+                        <div>
+                            <label>Service Type:</label>
+                            <select name="service_type" required>
+                                <option value="Fertilizer">Fertilizer Advance</option>
+                                <option value="Tractor">Tractor Ploughing</option>
+                                <option value="Seeds">Seed Distribution</option>
+                                <option value="Cash">Cash Advance</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                        <div>
+                            <label>Principal Amount (KES):</label>
+                            <input type="number" name="principal_borrowed" placeholder="Amount" required>
+                        </div>
+                        <div>
+                            <label>Annual Interest Rate (%):</label>
+                            <input type="number" step="0.1" name="annual_rate" value="12.0" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Advance Issuance Date:</label>
+                        <input type="date" name="borrowed_date" required>
+                    </div>
+                    <button type="submit" class="btn btn-gray">Log Deductible Advance</button>
+                </form>
             </div>
         </div>
-    </main>
-</body>
-</html>
+
+        <!-- System Audit Ledger Engine -->
